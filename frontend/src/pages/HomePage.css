@@ -1,0 +1,30 @@
+/* Base Styles */
+.home-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding-top: 60px; /* Offset for fixed navbar */
+  }
+  
+  /* Responsive Typography */
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+  
+  @media (max-width: 768px) {
+    html {
+      font-size: 14px;
+    }
+  }
+  
+  /* Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }

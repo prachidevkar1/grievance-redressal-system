@@ -1,0 +1,60 @@
+.notice-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid black;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-right: 20px;
+}
+
+.college-info h1 {
+  font-size: 22px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.college-info h2 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.college-info p {
+  font-size: 14px;
+  margin: 2px 0;
+}
+
+.college-info h1, .college-info h2, .college-info p {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+.logo {
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+
+@media (max-width: 600px) {
+  .notice-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.container, .form-wrapper, body {
+  overflow-y: auto !important;
+  max-height: 100vh; /* Or more as needed */
+}

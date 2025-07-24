@@ -1,0 +1,1139 @@
+/* Admin Dashboard Scoped Styles */
+
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.admin-container .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #000080;
+  color: #fff;
+  transition: left 0.3s ease;
+  overflow-y: auto;
+  z-index: 2000;
+  padding: 0;
+}
+.admin-container .sidebar .sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 100%;
+  background-color: #4cc5f0;
+  font-size: 26px;
+  font-weight: bold;
+  font-family: 'Times New Roman', serif;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+}
+.admin-container .sidebar .sidebar-header h6 {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+.admin-container .sidebar .sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 18px;
+}
+.admin-container .sidebar .sidebar-menu li {
+  padding: 13px 20px;
+  border-bottom: 1px solid #1a1a3d;
+  transition: background-color 0.3s;
+}
+.admin-container .sidebar .sidebar-menu li a {
+  display: block;
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Times New Roman', serif;
+  margin-left: 0;
+}
+.admin-container .sidebar .sidebar-menu li:hover {
+  background-color: #1f1f2e;
+}
+.admin-container .sidebar .sidebar-menu li a:hover,
+.admin-container .sidebar .sidebar-menu li a.active {
+  color: #ffcc00;
+}
+.admin-container .sidebar .active {
+  background-color: #1f1f2e;
+}
+
+/* Main Content */
+.admin-container .main-content {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #f7f7f7;
+  min-height: 100vh;
+}
+
+.admin-container .main-content .top-bar {
+  position: fixed;
+  top: 0;
+  left: 250px;
+  z-index: 3000;
+  width: calc(100% - 250px);
+  height: 52px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 18px 0 18px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  background: whitesmoke;
+  margin-bottom: 0;
+}
+.admin-container .main-content .top-bar .search-box {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #000080;
+  border-radius: 20px;
+  padding: 0px 10px;
+  width: 250px;
+  background: #fff;
+  height: 36px;
+}
+.admin-container .main-content .top-bar .search-box i {
+  font-size: 17px;
+  color: #000080;
+  margin-right: 10px;
+}
+.admin-container .main-content .top-bar .search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  width: 100%;
+  color: #333;
+}
+.admin-container .main-content .top-bar .top-right-icons {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  position: relative;
+}
+.admin-container .main-content .top-bar .top-right-icons .icon {
+  cursor: pointer;
+  font-size: 21px;
+  color: #000080;
+  transition: transform 0.2s;
+}
+.admin-container .main-content .top-bar .top-right-icons .icon:hover {
+  transform: scale(1.13);
+}
+.admin-container .main-content .top-bar .profile-icon {
+  margin-left: 10px;
+}
+
+.admin-container .main-container {
+  background-color: #fff;
+  min-height: calc(100vh - 52px);
+  overflow-y: auto;
+  margin-top: 52px; /* sits directly below fixed top-bar */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  width: 98%;
+  margin-left: 1%;
+  margin-right: 1%;
+  padding: 12px 10px 10px 10px;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #000080;
+  margin-right: 10px;
+}
+
+/* Responsive Styles */
+@media(max-width: 900px), (max-width: 768px), (max-width: 600px) {
+  .admin-container .main-content .top-bar {
+    flex-direction: row !important;
+    align-items: center !important;
+    height: 52px !important;
+    padding: 4px 8px 0 8px !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw !important;
+    min-width: 100vw !important;
+    max-width: 100vw !important;
+    z-index: 3000;
+    background: whitesmoke;
+    gap: 0 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
+  .admin-container .main-content {
+    margin-left: 0 !important;
+    width: 100vw !important;
+    min-width: 100vw !important;
+    max-width: 100vw !important;
+    background: #f7f7f7;
+  }
+  .admin-container .main-content .top-bar .search-box {
+    width: 60vw;
+    margin: 0 10px 0 10px;
+    align-self: center;
+    display: flex;
+  }
+  .admin-container .main-content .top-bar .top-right-icons {
+    gap: 18px;
+    margin: 0;
+    width: auto;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    display: flex;
+    align-items: center;
+  }
+  .menu-toggle {
+    display: block;
+    margin-right: 10px;
+    font-size: 28px;
+    color: #000080;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    align-self: center;
+  }
+  .admin-container .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    width: 80vw;
+    min-width: unset;
+    max-width: 80vw;
+    z-index: 4000;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.18);
+    transition: left 0.3s;
+    height: 100vh;
+  }
+  .admin-container .sidebar.show {
+    left: 0;
+    width: 80vw;
+    min-width: unset;
+    max-width: 80vw;
+  }
+  .admin-container .main-container {
+    padding: 60px 2vw 10px 2vw;
+    margin-top: 52px;
+    min-width: unset;
+    max-width: 100vw;
+    width: 100vw;
+    border-radius: 0;
+    background: #fff;
+  }
+}
+
+@media(max-width: 600px) {
+  .admin-container .main-content .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 8px 8px 8px 8px;
+    gap: 8px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 3000;
+    background: whitesmoke;
+  }
+  .admin-container .main-content .top-bar .search-box {
+    width: 100%;
+    margin: 0 0 4px 0;
+    align-self: stretch;
+  }
+  .admin-container .main-content .top-bar .top-right-icons {
+    gap: 20px;
+    margin: 0;
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .admin-container .main-container {
+    padding: 60px 2vw 10px 2vw;
+    margin-top: 52px;
+    min-width: unset;
+    max-width: 100vw;
+    width: 100vw;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-container .sidebar {
+    left: -100vw;
+    width: 80vw;
+    min-width: unset;
+    max-width: 100vw;
+    z-index: 4000;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.18);
+    transition: left 0.3s;
+  }
+  .admin-container .sidebar.show {
+    left: 0;
+    width: 80vw;
+  }
+  .admin-container .main-content {
+    margin-left: 0;
+    width: 100vw;
+    min-width: unset;
+    max-width: 100vw;
+  }
+  .admin-container .main-content .top-bar {
+    left: 0;
+    width: 100vw;
+    min-width: unset;
+    max-width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 3000;
+    flex-direction: row;
+    align-items: center;
+    height: 52px;
+    padding: 4px 8px 0 8px;
+  }
+  .admin-container .main-container {
+    padding: 60px 2vw 10px 2vw;
+    margin-top: 52px;
+    min-width: unset;
+    max-width: 100vw;
+    width: 100vw;
+    border-radius: 0;
+  }
+}
+
+/* Overall container layout */
+body{
+  margin: 0;
+  padding: 0;
+}
+.admin-container {
+ margin-top: 0px;
+ padding: 0;
+ overflow: hidden; /* Prevent page scrollbar */
+  position: relative;
+}
+
+/* Main content styles */
+.admin-container .main-content {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  overflow: hidden; /* Keep layout from overflowing */
+  display: flex;
+  margin-top: 0;
+  flex-direction: column;
+}
+/* Hide scrollbar in main content area if needed */
+.admin-container .main-content {
+  scrollbar-width: none; /* Firefox */
+}
+.admin-container .main-content::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+/* Responsive adjustments for small screens */
+@media(max-width: 768px) {
+  .admin-container .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* hidden by default */
+    width: 250px;
+    height: 100%;
+    transition: left 0.3s ease;
+  }
+  /* Show sidebar when active */
+  .sidebar.show {
+    left: 0;
+  }
+  /* Main content takes full width */
+  .admin-container .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+  .admin-container .main-content .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 8px 8px 8px 8px;
+    gap: 8px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 3000;
+    background: whitesmoke;
+  }
+  .menu-toggle {
+    align-self: flex-start;
+    margin-bottom: 0;
+    margin-top: 2px;
+  }
+  .admin-container .main-content .top-bar .search-box {
+    width: 100%;
+    margin: 0 0 4px 0;
+    align-self: stretch;
+  }
+  .main-content .top-bar .top-right-icons {
+    gap: 30px;
+    margin: 0;
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .main-content .top-bar .top-right-icons .icon {
+    font-size: 20px;
+  }
+  .admin-container .main-container {
+    padding-top: 110px !important;
+    /* enough space for top-bar on mobile */
+  }
+  .all-grievances-container, .records-table, .all-grievances-table {
+    width: 100vw !important;
+    min-width: unset;
+    max-width: 100vw;
+    font-size: 13px;
+    overflow-x: auto;
+  }
+  .all-grievances-table th, .all-grievances-table td {
+    padding: 7px 3px;
+    font-size: 13px;
+    word-break: break-word;
+  }
+}
+
+/* Main container for page content */
+.admin-container .main-container {
+  padding: 80px 20px 20px 20px; /* top padding increased to push below top-bar */
+  background-color: #fff;
+  min-height: calc(100vh - 55px);
+  overflow-y: auto;
+  /* Hide scrollbar */
+  scrollbar-width: none; /* Firefox */
+  margin-top: 20px;
+}
+.admin-container .main-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+/* Top bar styles: sticky at top */
+.admin-container .main-content .top-bar {
+  position: fixed;
+  top: 0;
+  left: 250px; /* sidebar width */
+  z-index: 100;
+  width: calc(100% - 250px);
+  height: 55px;
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+  background: whitesmoke;
+}
+
+/* Search box styling inside top bar */
+.admin-container .main-content .top-bar .search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #000080;
+  border-radius: 20px;
+  padding: 0px 10px;
+  width: 250px;
+  margin-left: 10px;
+}
+.main-content .top-bar .search-box i {
+  font-size: 16px;
+  color: #000080;
+  margin-right: 10px;
+}
+.main-content .top-bar .search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  width: 100%;
+  color: black; /* Assuming text color for input */
+}
+@media(max-width: 768px) {
+  .admin-container .main-content .top-bar .search-box {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* Top right icons container */
+.main-content .top-bar .top-right-icons {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  position: relative;
+  flex-wrap: wrap;
+  margin-right: 90px;
+}
+.main-content .top-bar .top-right-icons .icon {
+  cursor: pointer;
+  font-size: 19px;
+  color: #000080;
+  transition: transform 0.2s;
+}
+.main-content .top-bar .top-right-icons .icon:hover {
+  transform: scale(1.2);
+}
+
+/* Dropdown for notifications & profile */
+.top-bar .top-right-icons .dropdown-content {
+  position: absolute;
+  top: 55px; /* below the top bar height */
+  right: 0;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  padding: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+  width: 300px;
+  z-index: 999;
+}
+/* Hide scrollbar in dropdowns */
+.top-bar .top-right-icons .dropdown-content {
+  scrollbar-width: none; /* Firefox */
+}
+.top-bar .top-right-icons .dropdown-content::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+/* Specific dropdown positioning if needed */
+.main-content .top-bar .notifications-dropdown {
+  top: 55px;
+}
+.main-content .top-bar .profile-dropdown-menu {
+  top: 55px;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+}
+.top-bar .top-right-icons .notification {
+  margin-bottom: 10px;
+}
+.top-bar .top-right-icons .notification span {
+  display: block;
+  font-size: 14px;
+}
+.main-content .top-right-icons .notification small {
+  font-size: 12px;
+  color: gray;
+}
+
+/* Main content area for dynamic content */
+.admin-container .main-container {
+  padding: 20px;
+  background-color: #fff;
+  min-height: calc(100vh - 55px); /* fills remaining viewport height minus top bar */
+  overflow-y: auto;
+  /* Hide scrollbar */
+  scrollbar-width: none; /* Firefox */
+}
+.admin-container .main-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+/* Dashboard cards styles */
+.admin-container .content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Reduced gap for better spacing */
+  padding-top: 20px; /* Optional: space above cards */
+}
+.admin-container .content .card {
+  background-color: #000080;
+  border-radius: 8px;
+  width: 23%;
+  min-width: 200px;
+  height: 150px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+  transition: transform 0.3s;
+}
+.admin-container .content .card:hover {
+  transform: translateY(-5px);
+}
+.admin-container .content .card h2 {
+  margin: 0;
+  font-size: 20px;
+}
+.admin-container .content .card-count {
+  font-size: 24px;
+  font-weight: bold;
+  align-self: flex-end;
+}
+
+/* All grievances & records tables */
+.admin-container .all-grievances-container {
+  width: 100%;
+  overflow-x: auto;
+}
+/* Hide scrollbar in record tables */
+.admin-container .all-grievances-container {
+  scrollbar-width: none; /* Firefox */
+}
+.admin-container .all-grievances-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+.admin-container .all-grievances-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Times New Roman', serif;
+  font-size: 14px;
+}
+.admin-container .all-grievances-table th,
+.admin-container .all-grievances-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+.admin-container .all-grievances-table th {
+  background-color: #000080;
+  color: #fff;
+}
+.admin-container .all-grievances-table tr:hover {
+  background-color: #f1f1f1;
+}
+.action-icons i {
+  font-size: 18px;
+  margin: 0 8px;
+  cursor: pointer;
+  color: darkgray;
+  transition: transform 0.1s ease;
+}
+.action-icons i:hover {
+  color: #ffcc00;
+  transform: scale(1.0);
+}
+
+/* Responsive adjustments for small screens */
+@media(max-width: 768px) {
+  /* Sidebar collapses (slide out) */
+  .admin-container .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* hidden */
+    width: 250px;
+    height: 100%;
+    transition: left 0.3s ease;
+  }
+  .sidebar.show {
+    left: 0;
+  }
+  /* Main content full width */
+  .admin-container .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+  /* Stack cards vertically */
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  /* Cards full width on small screens */
+  .content .card {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+  /* Expand search box & dropdowns on small screens */
+  .top-bar .search-box {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  /* Dropdown overlays for small screens */
+  .dropdown-list {
+    width: 90% !important;
+    right: 5%;
+  }
+  /* Profile dropdown menu positioning on small screens */
+  .profile-dropdown-menu {
+    position: static;
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+/* Modal overlays and popups */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  background-color: #000080;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Dropdown list container styles */
+.dropdown-list {
+  position: absolute;
+  z-index: 999;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.dropdown-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  background-color: #fff;
+  transition: background-color 0.2s, color 0.2s;
+  font-size: 14px;
+}
+.dropdown-item:hover {
+  background-color: #e0e0e0;
+  color: #000080;
+}
+
+.recent-grievances-section {
+  margin-top: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 20px 30px 30px 30px;
+  max-width: 600px;
+}
+.recent-grievances-section h3 {
+  margin: 0 0 18px 0;
+  font-size: 1.3em;
+  color: #222;
+  font-weight: 600;
+}
+.recent-grievances-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.recent-grievance-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px 18px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.recent-grievance-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.recent-grievance-user {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 1.05em;
+}
+.recent-grievance-status {
+  font-size: 0.95em;
+  font-weight: 500;
+  padding: 3px 12px;
+  border-radius: 12px;
+  background: #e3eafc;
+  color: #2c3e50;
+  text-transform: capitalize;
+}
+.status-pending {
+  background: #e3f0ff;
+  color: #1976d2;
+}
+.status-in-progress {
+  background: #fffbe6;
+  color: #fbc02d;
+}
+.status-resolved {
+  background: #e6f9f0;
+  color: #388e3c;
+}
+.recent-grievance-desc {
+  color: #555;
+  font-size: 0.98em;
+  margin-bottom: 2px;
+}
+.recent-grievance-date {
+  color: #888;
+  font-size: 0.92em;
+  text-align: right;
+}
+@media (max-width: 900px) {
+  .recent-grievances-section {
+    max-width: 100%;
+    padding: 16px 10px 20px 10px;
+  }
+}
+
+/* 1. Avatar for Recent Grievances */
+.recent-grievance-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  background: #e3eafc;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+/* 2. Profile Card Styles */
+.profile-card {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background: #fff;
+  color: #222;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+  width: 320px;
+  z-index: 9999;
+  padding-bottom: 18px;
+  font-family: inherit;
+}
+.profile-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px 10px 20px;
+  border-radius: 12px 12px 0 0;
+  background: #4cc5f0;
+  color: #fff;
+}
+.profile-card-header .profile-card-name {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.profile-card-header .profile-card-email {
+  font-size: 0.98em;
+  color: #e0f7fa;
+}
+.profile-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 20px 0 20px;
+}
+.profile-card-action {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: black;
+  font-size: 1em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 0;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.profile-card-action:disabled {
+  color: black;
+  cursor: not-allowed;
+}
+.profile-card-action:hover:not(:disabled) {
+  background: #e0f7fa;
+}
+.profile-card-logout {
+  margin: 2px 10px;
+  background: #4cc5f0;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 600;
+  padding: 10px 0;
+  width: 95%;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.profile-card-logout:hover {
+  background: #0077b6;
+  color: #fff;
+}
+
+/* 3. Agenda of Meeting dropdown opens downward */
+.report-agenda-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  z-index: 1000;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  min-width: 180px;
+  margin-top: 4px;
+}
+
+/* 4. Location input style */
+.report-location-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  background: #fff;
+  color: #222;
+  margin-top: 6px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 900px) {
+  .admin-container .sidebar {
+    left: -250px;
+    width: 220px;
+    min-width: 180px;
+    z-index: 2000;
+  }
+  .sidebar.show {
+    left: 0;
+  }
+  .admin-container .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+  .admin-container .main-container {
+    padding: 80px 5px 20px 5px;
+    margin-top: 40px;
+  }
+  .admin-container .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .admin-container .content .card {
+    width: 95%;
+    min-width: unset;
+    margin-bottom: 20px;
+  }
+  .profile-card {
+    width: 95vw;
+    right: 2vw;
+    min-width: unset;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* --- Responsive Sidebar: Full width on mobile --- */
+@media (max-width: 768px) {
+  .admin-container .sidebar {
+    left: 0;
+    width: 100vw;
+    min-width: unset;
+    max-width: 100vw;
+    z-index: 2000;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.18);
+  }
+  .sidebar.show {
+    left: 0;
+    width: 100vw;
+  }
+  .admin-container .main-content {
+    margin-left: 0;
+    width: 100vw;
+    min-width: unset;
+    max-width: 100vw;
+  }
+  .admin-container .main-content .top-bar {
+    left: 0;
+    width: 100vw;
+    min-width: unset;
+    max-width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 3000;
+    flex-direction: row;
+    align-items: center;
+    height: 55px;
+    padding: 6px 10px;
+  }
+  .menu-toggle {
+    display: block;
+    margin-right: 10px;
+    font-size: 28px;
+    color: #000080;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  .admin-container .main-container {
+    padding: 70px 5px 20px 5px;
+    margin-top: 0;
+    min-width: unset;
+    max-width: 100vw;
+  }
+  .admin-container .sidebar .sidebar-header {
+    width: 100vw;
+    min-width: unset;
+    max-width: 100vw;
+    font-size: 22px;
+    height: 55px;
+  }
+  .admin-container .sidebar .sidebar-menu li {
+    padding: 13px 12px;
+    font-size: 17px;
+  }
+  .admin-container .sidebar .sidebar-menu li a {
+    font-size: 17px;
+  }
+  .admin-container .content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .admin-container .content .card {
+    width: 98vw;
+    min-width: unset;
+    margin-bottom: 12px;
+    font-size: 15px;
+    height: 120px;
+    padding: 12px;
+  }
+  .recent-grievances-section {
+    max-width: 100vw;
+    padding: 10px 2vw 18px 2vw;
+  }
+  .all-grievances-container, .records-table, .all-grievances-table {
+    width: 100vw !important;
+    min-width: unset;
+    max-width: 100vw;
+    font-size: 13px;
+  }
+  .all-grievances-table th, .all-grievances-table td {
+    padding: 7px 3px;
+    font-size: 13px;
+  }
+  .profile-card {
+    width: 95vw;
+    right: 2vw;
+    min-width: unset;
+    max-width: 98vw;
+  }
+}
+
+/* --- Ensure sidebar overlays content on mobile --- */
+@media (max-width: 768px) {
+  .admin-container .sidebar {
+    position: fixed;
+    left: -100vw;
+    transition: left 0.3s;
+  }
+  .sidebar.show {
+    left: 0;
+  }
+  .admin-container .main-content {
+    margin-left: 0;
+  }
+}
+
+/* --- Hide scrollbar on mobile for sidebar and main content --- */
+@media (max-width: 768px) {
+  .admin-container .sidebar,
+  .admin-container .main-content {
+    scrollbar-width: none;
+  }
+  .admin-container .sidebar::-webkit-scrollbar,
+  .admin-container .main-content::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* --- Make tables scrollable horizontally on mobile --- */
+@media (max-width: 768px) {
+  .all-grievances-container {
+    overflow-x: auto;
+    width: 100vw;
+  }
+  .all-grievances-table {
+    min-width: 600px;
+  }
+}

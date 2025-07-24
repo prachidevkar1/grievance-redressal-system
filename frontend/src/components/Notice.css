@@ -1,0 +1,101 @@
+.notice-container {
+  max-width: 850px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff;
+  font-family: 'Times New Roman', serif;
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.form-grid input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.print-button {
+  background-color: #000080;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.print-button:hover {
+  background-color: #0056b3;
+}
+
+.notice-content {
+  border-top: 2px solid #000;
+  padding-top: 20px;
+  font-size: 16px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+.notice-title {
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-top: 10px;
+}
+
+.notice-date {
+  text-align: right;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.notice-footer {
+  text-align: right;
+  margin-top: 40px;
+  font-weight: bold;
+}
+
+/* Header styles */
+.notice-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid black;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-right: 20px;
+}
+
+.college-info h1 {
+  font-size: 22px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.college-info h2 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.college-info p {
+  font-size: 14px;
+  margin: 2px 0;
+}

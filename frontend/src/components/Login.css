@@ -1,0 +1,134 @@
+.upperside {
+    width: 100%;
+    height: 50px;
+    background: #000080;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .upperside button {
+    width: 120px;
+    height: 34px;
+    background: whitesmoke;
+    color: #000080;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    margin: 10px 20px;
+  }
+  
+  .upperside button:hover {
+    background: #e0e0e0;
+    transform: translateY(-1px);
+  }
+
+.login-container {
+    width: 100%;
+    max-width: 450px;
+    height: 500px;
+    margin: 80px auto;
+    padding: 20px 25px;
+    background: whitesmoke;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.163);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin: 10px 0px;
+    font-size: 25px;
+    font-weight: 510;
+    color: #000080;
+}
+
+.input-group {
+    padding: 10px 0;
+}
+.input-group span{
+    font-size: 15px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    font-size: 15px;
+}
+
+.login-btn {
+    width: 100%;
+    height: 40px;
+    background: #000080;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.login-btn:hover {
+    background-color: #000066;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-btn {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    color: #000;
+    font-size: 15px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown.active .dropdown-content {
+    display: block;
+}
+
+#message {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+}
