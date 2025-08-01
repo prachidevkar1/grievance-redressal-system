@@ -210,7 +210,7 @@ const Register = () => {
                         <div className="form-right-column">
                             <div className="form-group">
                                 <label htmlFor="grievanceDescription">Grievance Description:</label>
-                                <textarea id="grievanceDescription" name="grievanceDescription" value={formData.grievanceDescription} onChange={handleChange} required placeholder="Describe your grievance here..." rows={3} />
+                                <textarea id="grievanceDescription" name="grievanceDescription" value={formData.grievanceDescription} onChange={handleChange} required placeholder="Describe your grievance here..." rows={3} autoComplete="off" />
                             </div>
 
                             <TextInput id="respondentName" label="Respondent Name" name="respondentName" value={formData.respondentName} onChange={handleChange} inputRef={respondentNameRef} required placeholder="Enter respondent name" />
@@ -231,7 +231,7 @@ const Register = () => {
 
                             <div className="form-group">
                                 <label htmlFor="dateOfSubmission">Date of Submission:</label>
-                                <input type="date" id="dateOfSubmission" name="dateOfSubmission" value={formData.dateOfSubmission} onChange={handleDateChange} max={getCurrentDate()} />
+                                <input type="date" id="dateOfSubmission" name="dateOfSubmission" value={formData.dateOfSubmission} onChange={handleDateChange} max={getCurrentDate()} autoComplete="off" />
 
                                 {dateError && <div className="error-message">{dateError}</div>}
                             </div>
@@ -253,14 +253,14 @@ const Register = () => {
 const TextInput = ({ id, label, name, value, onChange, required = false, type = "text", inputRef, placeholder }) => (
     <div className="form-group">
         <label htmlFor={id}>{label}:</label>
-        <input id={id} name={name} type={type} value={value} onChange={onChange} required={required} ref={inputRef} placeholder={placeholder} />
+        <input id={id} name={name} type={type} value={value} onChange={onChange} required={required} ref={inputRef} placeholder={placeholder} autoComplete="off" />
     </div>
 );
 
 const SelectInput = ({ id, label, name, value, onChange, options }) => (
     <div className="form-group">
         <label htmlFor={id}>{label}:</label>
-        <select id={id} name={name} value={value} onChange={onChange} required>
+        <select id={id} name={name} value={value} onChange={onChange} required autoComplete="off">
             <option value="" disabled>Select {label}</option>
             {options.map((opt, idx) => (
                 <option key={idx} value={opt.toLowerCase()}>{opt}</option>

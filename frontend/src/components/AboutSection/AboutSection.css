@@ -9,9 +9,9 @@
 .image-container1 {
   position: relative;
   flex: 0 0 40%;
-  height: 370px;
+  height: 400px;
   border-radius: 10px;
-  margin-top: 70px;
+  margin-top: 80px;
   margin-left: 30px;
   overflow: hidden;
 }
@@ -76,7 +76,20 @@
   text-align: left;
   color: #000080;
   font-size: 16px;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
+}
+
+.chairman {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.chairman .member {
+  font-weight: bold;
+  font-size: 18px;
+  color: #000080;
+  border-bottom: 2px solid #000080;
+  padding: 0.8rem 0;
 }
 
 .committee-grid {

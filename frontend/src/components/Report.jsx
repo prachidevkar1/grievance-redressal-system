@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { jsPDF } from "jspdf";
-import logo from "../assets/logo.png"; // Ensure this points to the correct logo file
-import "./Report.css"; // Include the CSS styles below
+import logo from "../assets/logo.png";
+import "./Report.css";
 
 export default function Report() {
     const [formData, setFormData] = useState({
         purpose: "",
         date: "",
         time: "",
-        location: "",
+        location: "Pandharpur",
         attendees: "",
         grievanceOverview: "",
         detailsPresented: "",
@@ -61,7 +61,6 @@ export default function Report() {
         }
 
         const doc = new jsPDF();
-
         let y = 10;
         doc.setFontSize(12);
         doc.setFont("helvetica", "normal");
@@ -82,25 +81,6 @@ export default function Report() {
 
         doc.save("Grievance_Report.pdf");
     };
-
-    function InputField({ label, name, value, onChange, required, type = "text", placeholder, readOnly }) {
-        return (
-            <label style={{ display: "block", marginBottom: 15 }}>
-                {label}:
-                <input
-                    type={type}
-                    name={name}
-                    value={value}
-                    onChange={onChange}
-                    required={required}
-                    placeholder={placeholder}
-                    readOnly={readOnly}
-                    style={inputStyle}
-                />
-            </label>
-        );
-    }
-
 
     return (
         <div style={{ padding: 20, backgroundColor: "#f0f2f5", minHeight: "100vh" }}>
@@ -126,14 +106,7 @@ export default function Report() {
                     </div>
                 </div>
 
-                <h2
-                    style={{
-                        textAlign: "center",
-                        color: "#000080",
-                        marginBottom: 20,
-                        fontWeight: "bold",
-                    }}
-                >
+                <h2 style={{ textAlign: "center", color: "#000080", marginBottom: 20, fontWeight: "bold" }}>
                     Grievance Meeting Report
                 </h2>
 
@@ -147,8 +120,22 @@ export default function Report() {
                             required
                             placeholder="Enter agenda of meeting"
                         />
-                        <InputField label="Date of Meeting" name="date" type="date" value={formData.date} onChange={handleChange} required />
-                        <InputField label="Time of Meeting" name="time" placeholder="Start Time - End Time" value={formData.time} onChange={handleChange} required />
+                        <InputField
+                            label="Date of Meeting"
+                            name="date"
+                            type="date"
+                            value={formData.date}
+                            onChange={handleChange}
+                            required
+                        />
+                        <InputField
+                            label="Time of Meeting"
+                            name="time"
+                            placeholder="Start Time - End Time"
+                            value={formData.time}
+                            onChange={handleChange}
+                            required
+                        />
                         <InputField
                             label="Location"
                             name="location"
@@ -157,21 +144,58 @@ export default function Report() {
                             required
                             placeholder="Enter location"
                         />
-                        <TextAreaField label="Attended Members" name="attendees" rows={3} value={formData.attendees} onChange={handleChange} required />
+                        <TextAreaField
+                            label="Attended Members"
+                            name="attendees"
+                            rows={3}
+                            value={formData.attendees}
+                            onChange={handleChange}
+                            required
+                        />
                     </Section>
 
                     <Section title="2. Minutes Of Meeting">
-                        <TextAreaField label="Grievance Overview" name="grievanceOverview" rows={4} value={formData.grievanceOverview} onChange={handleChange} />
-                        <TextAreaField label="Details Presented" name="detailsPresented" rows={4} value={formData.detailsPresented} onChange={handleChange} />
+                        <TextAreaField
+                            label="Grievance Overview"
+                            name="grievanceOverview"
+                            rows={4}
+                            value={formData.grievanceOverview}
+                            onChange={handleChange}
+                        />
+                        <TextAreaField
+                            label="Details Presented"
+                            name="detailsPresented"
+                            rows={4}
+                            value={formData.detailsPresented}
+                            onChange={handleChange}
+                        />
                     </Section>
 
                     <Section title="3. Discussion Summary">
-                        <TextAreaField label="Key Discussions" name="keyDiscussions" rows={4} value={formData.keyDiscussions} onChange={handleChange} />
+                        <TextAreaField
+                            label="Key Discussions"
+                            name="keyDiscussions"
+                            rows={4}
+                            value={formData.keyDiscussions}
+                            onChange={handleChange}
+                        />
                     </Section>
 
                     <Section title="4. Signatures">
-                        <InputField label="Prepared By" name="preparedBy" value={formData.preparedBy} onChange={handleChange} required />
-                        <InputField label="Approved By" name="approvedBy" value={formData.approvedBy} onChange={handleChange} required />
+                        <InputField
+                            label="Prepared By"
+                            name="preparedBy"
+                            value={formData.preparedBy}
+                            onChange={handleChange}
+                            required
+                        />
+                        <InputField
+                            label="Approved By"
+                            name="approvedBy"
+                            value={formData.approvedBy}
+                            onChange={handleChange}
+                            required
+                        />
                     </Section>
 
                     <div style={{ textAlign: "center", marginTop: 20 }}>
@@ -211,6 +235,7 @@ export default function Report() {
     );
 }
 
+// Helper Components
 function Section({ title, children }) {
     return (
         <section style={{ marginBottom: 20 }}>
@@ -220,7 +245,7 @@ function Section({ title, children }) {
     );
 }
 
-function InputField({ label, name, value, onChange, required, type = "text", placeholder }) {
+function InputField({ label, name, value, onChange, required, type = "text", placeholder, readOnly }) {
     return (
         <label style={{ display: "block", marginBottom: 15 }}>
             {label}:
@@ -231,6 +256,7 @@ function InputField({ label, name, value, onChange, required, type = "text", pla
                 onChange={onChange}
                 required={required}
                 placeholder={placeholder}
+                readOnly={readOnly}
                 style={inputStyle}
             />
         </label>
@@ -253,30 +279,7 @@ function TextAreaField({ label, name, value, onChange, rows, required }) {
     );
 }
 
-function SelectField({ label, name, value, onChange, required, options }) {
-  return (
-    <label style={{ display: "block", marginBottom: 15, marginTop: 10, position: 'relative', zIndex: 1  }}>
-      {label}:
-      <select
-        name={name}
-        value={value}
-        onChange={onChange}
-        required={required}
-        style={{ ...inputStyle, height: '38px' ,
-          zIndex: 1, }}
-      >
-        <option value="">-- Select Grievance Subject --</option>
-        {options.map((opt) => (
-          <option key={opt.value} value={opt.value}>
-            {opt.label}
-          </option>
-        ))}
-      </select>
-    </label>
-  );
-}
-
-
+// Style Constants
 const inputStyle = {
     width: "100%",
     padding: "8px 12px",

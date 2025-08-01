@@ -1,0 +1,77 @@
+# ========================================
+# Logs
+# ========================================
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# ========================================
+# Dependency directories
+# ========================================
+node_modules/
+**/node_modules/
+
+# ========================================
+# Build output
+# ========================================
+dist/
+build/
+.out/
+.next/
+.cache/
+.temp/
+
+# ========================================
+# Environment variables
+# ========================================
+.env
+.env.local
+.env.*.local
+
+# ========================================
+# OS generated files
+# ========================================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# ========================================
+# IDEs and editors
+# ========================================
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ========================================
+# Database dumps / sensitive data
+# ========================================
+*.sql
+*.sqlite
+*.db
+
+# ========================================
+# Uploaded media (optional)
+# ========================================
+uploads/
+public/uploads/
+public/videos/
+
+# ========================================
+# Optional: Exclude coverage/testing outputs
+# ========================================
+coverage/
+*.lcov
+jest-test-results.json
+
+# ========================================
+# Optional: Exception to allow extensions.json
+# ========================================
+!.vscode/extensions.json

@@ -8,7 +8,7 @@ const HeaderSection = () => {
     <div className="image-container" id="home">
       <img src={heroImage} alt="Grievance System" />
       <div className="content">
-        <h1>Grievance Management System</h1>
+        <h1>Grievance Redressal System</h1>
         <Link to="/register" className="btn">Register Grievance</Link>
       </div>
     </div>

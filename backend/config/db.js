@@ -5,7 +5,7 @@ require('dotenv').config(); // Load environment variables
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'Pratiksha#480',
+  password: 'root@123',
   database: 'grievance_system'
 });
 

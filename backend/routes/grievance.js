@@ -72,7 +72,7 @@ router.post('/submit-grievance', (req, res) => {
       <p>We will get back to you after reviewing your grievance.</p>
       <p>Regards,<br/>Grievance Committee</p>
     `;
-    const studentMailOptions = createMailOptions(email, 'Grievance Submission Confirmation', studentMailHtml);
+    const studentMailOptions = createMailOptions(email, 'Student Grievance Submission Confirmation', studentMailHtml);
 
     transporter.sendMail(studentMailOptions, (error) => {
       if (error) console.error('Student email failed:', error);
@@ -96,7 +96,7 @@ router.post('/submit-grievance', (req, res) => {
       </ul>
       <p>Please log in to the system to review and take action.</p>
     `;
-    const inchargeMailOptions = createMailOptions(inchargeEmail, 'New Grievance Received', inchargeMailHtml);
+    const inchargeMailOptions = createMailOptions(inchargeEmail, 'New Grievance Received to Admin', inchargeMailHtml);
 
     transporter.sendMail(inchargeMailOptions, (error) => {
       if (error) console.error('In-charge email failed:', error);

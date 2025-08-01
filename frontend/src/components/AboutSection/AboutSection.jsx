@@ -18,22 +18,25 @@ const AboutSection = () => {
         
         <div className="committee-section">
           <h3 className="committee-intro">Our dedicated Grievance Redressal Committee members:</h3>
+          <div className="chairman">
+            <div className="member">Dr. K. J. Karande Chairman</div>
+          </div>
           <div className="committee-grid">
             <div className="committee-column">
-              <div className="member">Dr. S. G. Kulkarni</div>
               <div className="member">Dr. S. S. Kulkarni</div>
               <div className="member">Dr. S. S. Kadam</div>
               <div className="member">Dr. A. O. Mulani</div>
               <div className="member">Dr. B. B. Godbole</div>
-              <div className="member">Prof. S. V. Pingale</div>
+              <div className="member">Dr. S. V. Pingale</div>
+              <div className="member">Prof. S. C. Mali</div>
             </div>
             <div className="committee-column">
+              <div className="member">Dr. S. G. Kulkarni</div>
               <div className="member">Dr. S. D. Katekar</div>
               <div className="member">Prof. A. I. Nikam</div>
               <div className="member">Prof. V. P. More</div>
               <div className="member">Prof. A. A. Chandane</div>
               <div className="member">Prof. A. C. Pise</div>
-              <div className="member">Prof. S. C. Mali</div>
             </div>
           </div>
         </div>

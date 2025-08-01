@@ -6,7 +6,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const Admin = () => {
-  // State variables
+  
   const [activeSection, setActiveSection] = useState('home');
   const [grievances, setGrievances] = useState([]);
   const [records, setRecords] = useState([]);
@@ -17,7 +17,6 @@ const Admin = () => {
   const [selectedGrievance, setSelectedGrievance] = useState(null);
   const [sidebarVisible, setSidebarVisible] = useState(false);
 
-  // Dropdown for status change
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [dropdownPosition, setDropdownPosition] = useState({ top: 0, left: 0 });
   const [dropdownValue, setDropdownValue] = useState('');
@@ -25,7 +24,6 @@ const Admin = () => {
   const [dropdownWidth, setDropdownWidth] = useState(200);
   const dropdownRef = useRef(null);
 
-  // Profile dropdown ref
   const profileRef = useRef(null);
 
   const dropdownOptions = ['pending', 'in-progress', 'resolved'];
